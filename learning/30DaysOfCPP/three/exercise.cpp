@@ -29,12 +29,17 @@ bool check_range(T value, T min, T max) {
 int main() {
   int N;
    cin >> N;
-  // If n  is odd, print Weird
+    // If n  is odd, print Weird
   if (N % 2 != 0) {
     cout << "Weird" << endl;
-  } else if ()
-  // If n is even and in the inclusive range of  to , print Not Weird
-  // If n is even and in the inclusive range of  to , print Weird
-  // If n is even and greater than , print Not Weird
+    // If n is even and in the inclusive range of  to , print Not Weird
+  } else if (check_range(N, 2, 5)) {
+    cout << "Not Weird" << endl;
+  } else if (check_range(N, 6, 20)) {
+    cout << "Weird" << endl;
+  } else if (N >= 20) {
+    cout << "Not Weird" << endl;
+  }
+
   return 0;
 }
