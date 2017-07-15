@@ -28,18 +28,21 @@ bool check_range(T value, T min, T max) {
 
 int main() {
   int N;
-   cin >> N;
-    // If n  is odd, print Weird
+  string phrase;
+
+  cin >> N;
+
   if (N % 2 != 0) {
-    cout << "Weird" << endl;
-    // If n is even and in the inclusive range of  to , print Not Weird
+    phrase = "Weird";
   } else if (check_range(N, 2, 5)) {
-    cout << "Not Weird" << endl;
+    phrase = "Not Weird";
   } else if (check_range(N, 6, 20)) {
-    cout << "Weird" << endl;
+    phrase = "Weird";
   } else if (N >= 20) {
-    cout << "Not Weird" << endl;
+    phrase = "Not Weird";
   }
+
+  cout << phrase << endl;
 
   return 0;
 }
