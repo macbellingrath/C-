@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-    int x >> cin;
+    int x;
     cin >> x;
 
     for (int multiple = 1; multiple <= 10; multiple++){
