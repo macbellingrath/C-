@@ -27,9 +27,9 @@ int main() {
   for (int i = 0; i < v.size(); i++) {
     int j = i;
     int count = 0;
-    while (v[j] == 1) {
+    while (v[j] == 1 && j < v.size()) {
       count++;
-      j++; // potentially out of bounds? or does line 30 already handle this?
+      j++;
       m = max(m, count);
     }
   }
