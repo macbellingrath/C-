@@ -5,12 +5,18 @@
 #include <algorithm>
 using namespace std;
 
+/*
+Given a base-10 integer, n, convert it to binary (base-2).
+Then find and print the base-10 integer denoting the maximum number of consecutive 1's in n's binary representation.
+Constraints: 1 <= n <= 10^6
+*/
 
 int main() {
-  vector<int> v;
   int n;
   cin >> n;
 
+  vector<int> v;
+  // convert base-10 integer to binary, base=2
   while (n > 0) {
     int r = n%2;
     v.push_back(r);
@@ -23,7 +29,7 @@ int main() {
     int count = 0;
     while (v[j] == 1) {
       count++;
-      j++;
+      j++; // potentially out of bounds? or does line 30 already handle this?
       m = max(m, count);
     }
   }
