@@ -33,6 +33,12 @@ class Student: public Person {
     }
 };
 
+#include <iostream>
+#include <vector>
+#include <numeric>
+#include <string>
+#include <functional>
+
 class Student: public Person {
   private:
     vector<int> testScores;
@@ -41,19 +47,27 @@ class Student: public Person {
       this->testScores = testScores;
     }
 
-    string calculate() {
-      int average = accumulate(testScores.begin(), testScores.end(), 0)/testScores.size();
-      switch (average) {
-        case (average >= 90 && average <= 100): return "O"; break;
-        case (average >= 80 && average < 90): return "E"; break;
-        case (average >= 70 && average < 80): return "A"; break;
-        case (average >= 55 && average < 70): return "P"; break;
-        case (average >= 40 && average < 55): return "D"; break;
-        case (average < 40): return "T"; break;
-      }
+  string calculate() {
+    double a = 1.0 * accumulate(testScores.begin(), testScores.end(), 0.0)/ testScores.size();
+    int average = int(a);
+    string letter = "";
+    if (average >= 90 && average <= 100) {
+        letter = "O";
+    } else if (average >= 80 && average < 90) {
+        letter =  "E";
+    } else if (average >= 70 && average < 80){
+        letter =  "A";
+    } else if (average >= 55 && average < 70) {
+        letter =  "P";
+    } else if (average >= 40 && average < 55) {
+        letter =  "D";
+    } else {
+        letter = "T";
+    }
+
+      return letter;
     }
 };
-
 
 int main() {
   string firstName;
