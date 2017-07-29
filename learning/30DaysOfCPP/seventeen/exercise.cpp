@@ -5,7 +5,8 @@
 using namespace std;
 
 class Calculator {
-    public int power(int n, int p) {
+    public:
+      int power(int n, int p) {
       if (p < 0 || n < 0) {
           throw runtime_error("n and p should be non-negative");
       } else {
